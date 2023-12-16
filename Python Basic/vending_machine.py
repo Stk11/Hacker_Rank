@@ -80,3 +80,34 @@
 # 1
 
 # 2 N
+
+class VendingMachine:
+    
+    def __init__(self, num_items, item_price):
+        self.num_items = num_items
+        self.item_price = item_price
+
+    def buy(self,req_items, money):
+        self.req_items = req_items
+        self.money = money
+        # print(num_items,item_price,req_items,money)
+        if  self.num_items >= req_items and money >= (req_items*item_price):
+            money -= (req_items*item_price)
+            self.num_items -= req_items
+            return print(money)
+        elif money < (req_items*item_price):
+            return print("Not enough coins")
+        elif req_items >= num_items:
+            return print("Not enough items in the machine")
+    pass
+if __name__ == '__main__':
+    num_items, item_price = map(int, input().split())
+    machine = VendingMachine(num_items, item_price)
+
+    n = int(input())
+    for _ in range(n):
+        req_items, money = map(int, input().split())
+        try:
+            change = machine.buy(req_items, money)
+        except ValueError as e:
+            print(e)
