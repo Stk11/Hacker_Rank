@@ -43,16 +43,16 @@ class Solution:
         elements.extend([count1,count2])  
         return elements
 
-
+def main():
     # Input from the user
-nums1 = input()
-nums2 = input()
+    nums1 = input()
+    nums2 = input()
 
-# Create an instance of the Solution class
-solution = Solution()
+    # Create an instance of the Solution class
+    solution = Solution()
 
-# Build the BST
-elements = solution.findIntersectionValues(nums1,nums2)
+    # Build the BST
+    elements = solution.findIntersectionValues(nums1,nums2)
 
-# Print or process the result as needed
-print(elements)
+    # Print or process the result as needed
+    print(elements)
